@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Álbum de Fotos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <audio id="bg-music" src="musica.mp3" loop autoplay></audio>
+
+  <!-- Controles -->
+  <div class="controls">
+    <button onclick="toggleMusic()">🔈 Música</button>
+    <button onclick="toggleTheme()">🌓 Modo</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="login-screen" class="login-container">
+    <div class="login-box">
+      <h2 class="typewriter">✨ Ingresa la fecha que me respondiste en tiktok </h2>
+      <input type="text" id="date-input" placeholder="dd-mm-aaaa" readonly />
+      <div class="numpad">
+        <button onclick="pressKey('1')">1</button>
+        <button onclick="pressKey('2')">2</button>
+        <button onclick="pressKey('3')">3</button>
+        <button onclick="pressKey('4')">4</button>
+        <button onclick="pressKey('5')">5</button>
+        <button onclick="pressKey('6')">6</button>
+        <button onclick="pressKey('7')">7</button>
+        <button onclick="pressKey('8')">8</button>
+        <button onclick="pressKey('9')">9</button>
+        <button onclick="pressKey('-')">-</button>
+        <button onclick="pressKey('0')">0</button>
+        <button onclick="backspace()">⌫</button>
+      </div>
+      <button onclick="checkDate()">Entrar</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- GALERÍA -->
+  <div id="gallery-screen" style="display: none;">
+    <h1 class="gallery-title">📸 La chica mas bonita que voy conociendo</h1>
+    <div class="gallery" id="gallery"></div>
+
+    <!-- MENSAJE FINAL -->
+    <div class="final-message">
+      <p>
+        “Fue hermoso coincidir contigo, incluso sin conocernos en persona.<br />
+        Como dos estrellas en órbitas lejanas que se saludan con la mirada del corazón.” 💫
+      </p>
+      <div class="rose">🌹</div>
+    </div>
+
+    <!-- PUZZLE -->
+    <section id="puzzle-section">
+      <h2 class="puzzle-title">🧩 Un Puzzle para Ti</h2>
+      <p class="puzzle-subtext">Cada pieza forma parte de algo bonito reflejado en tu belleza 💞</p>
+      <div id="puzzle-container"></div>
+      <p id="puzzle-message"></p>
+    </section>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content bounce-in">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modal-img" src="" alt="Foto grande" />
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="puzzle.js"></script>
+</body>
+</html>
